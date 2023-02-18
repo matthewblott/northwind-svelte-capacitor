@@ -1,0 +1,24 @@
+as a user
+I want to
+so I can
+who, what, why
+
+
+scheme="http"
+domain="localhost:8000"
+email=""
+password=""
+api_key=""
+session_token=""
+
+curl -i -k -3 -X POST "${scheme}://${domamin}/api/v2/system/admin/session" \
+ -d '{ "email" : "${email}", "password" : "${password}" }' \
+ -H "Content-Type: application/json"
+
+curl -i -k -3 -X POST "${scheme}://${domain}/api/v2/user/session" \
+ -d '{ "email" : "${email}", "password" : "${password}" }' \
+ -H "Content-Type: application/json"
+
+curl -i -k -3 -X GET "${scheme}://${domain}/api/v2/db/_table/regions" \
+  -H "X-DreamFactory-Api-Key: ${api_key}" \
+  -H "X-DreamFactory-Session-Token: ${session_token}"
